@@ -1,0 +1,76 @@
+{
+    "name": "heroku-external-objects",
+    "description": "This project populates several Postgres database tables with demo data for use with Heroku External Objects and Salesforce Connect.",
+    "version": "0.0.1",
+    "bugs": "https://github.com/heroku-external-objects/issues",
+    "dependencies": {
+        "@lwc/synthetic-shadow": "^1.7.7",
+        "@salesforce-ux/design-system": "^2.12.2",
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "helmet": "^3.23.3",
+        "pg-promise": "^10.5.8",
+        "promised-csv": "^1.0.1",
+        "npm-run-all": "^4.1.5"
+    },
+    "devDependencies": {
+        "eslint": "^7.4.0",
+        "husky": "^4.2.5",
+        "lint-staged": "^10.2.11",
+        "lwc-services": "^2.1.4",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^2.0.5"
+    },
+    "engines": {
+        "node": ">=10.13.0",
+        "npm": ">=6.4.1",
+        "yarn": ">=1.9.4"
+    },
+    "homepage": "https://github.com/heroku-external-objects",
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "keywords": [
+        "lwc"
+    ],
+    "license": "MIT",
+    "lint-staged": {
+        "**/*.{css,html,js,json,md,ts,yaml,yml}": [
+            "prettier --write"
+        ],
+        "./src/**/*.js": [
+            "eslint"
+        ]
+    },
+    "nodemonConfig": {
+        "watch": [
+            "src/server/**/*.js"
+        ],
+        "ext": "js",
+        "ignore": [
+            "src/**/*.spec.js",
+            "src/**/*.test.js"
+        ],
+        "exec": "node ./src/server/api.js"
+    },
+    "repository": "heroku-external-objects",
+    "scripts": {
+        "build": "lwc-services build -m production",
+        "build:development": "lwc-services build",
+        "lint": "eslint ./src/**/*.js",
+        "prettier": "prettier --write \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "prettier:verify": "prettier --list-different \"**/*.{css,html,js,json,md,ts,yaml,yml}\"",
+        "serve": "run-p serve:client serve:api",
+        "serve:api": "node src/server/api.js",
+        "serve:client": "node scripts/server.js",
+        "test:unit": "lwc-services test:unit",
+        "test:unit:coverage": "lwc-services test:unit --coverage",
+        "test:unit:debug": "lwc-services test:unit --debug",
+        "test:unit:watch": "lwc-services test:unit --watch",
+        "watch": "run-p watch:client watch:server",
+        "watch:client": "lwc-services watch",
+        "watch:server": "nodemon"
+    }
+}

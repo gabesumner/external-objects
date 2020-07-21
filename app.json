@@ -1,0 +1,8 @@
+{
+    "name": "Heroku External Objects Demo",
+    "description": "This project populates several Postgres database tables with demo data for use with Heroku External Objects and Salesforce Connect.",
+    "repository": "https://github.com/gabesumner/heroku-external-objects",
+    "keywords": ["node", "express", "heroku", "salesforce"],
+    "image": "heroku/nodejs",
+    "addons": ["heroku-postgresql", "herokuconnect"]
+}

@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "experimentalDecorators": true,
+        "target": "es2019"
+    },
+    "typeAcquisition": {
+        "include": ["jest"]
+    }
+}

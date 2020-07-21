@@ -1,0 +1,60 @@
+<template>
+    <div class="slds-box slds-m-around_small slds-clearfix">
+        <div class="slds-float_left logo slds-p-right_small">
+            <img src="./resources/purplebolt.png" />
+        </div>
+        <div class="slds-float_left">
+            <h1 class="slds-text-heading_large">Heroku External Objects</h1>
+            <h2 class="slds-text-heading_small">Demo Data</h2>
+        </div>
+    </div>
+
+    <div
+        class="slds-scoped-notification slds-media slds-scoped-notification_light slds-m-around_small"
+        role="status"
+    >
+        <div class="slds-media__figure">
+            <span
+                class="slds-icon_container slds-icon-utility-info"
+                title="information"
+            >
+                <svg
+                    class="slds-icon slds-icon_small slds-icon-text-default"
+                    aria-hidden="true"
+                >
+                    <use
+                        xlink:href="/resources/assets/icons/utility-sprite/svg/symbols.svg#info"
+                    ></use>
+                </svg>
+                <span class="slds-assistive-text">information</span>
+            </span>
+        </div>
+        <div class="slds-media__body">
+            <p>
+                This project creates and populates several Postgres database
+                tables that you can integrate into Salesforce using Heroku
+                External Objects and Salesforce Connect. If you want to reset
+                this demo data, use the <strong>Reset Data</strong> button.
+            </p>
+        </div>
+    </div>
+
+    <div class="slds-box slds-m-around_small">
+        <h3 class="slds-text-heading_small slds-p-bottom_small">
+            Available database tables
+        </h3>
+        <ul class="slds-has-dividers_bottom-space slds-border_top">
+            <template for:each={tables} for:item="table">
+                <li key={table} class="slds-item">
+                    <p key={table}>{table}</p>
+                </li>
+            </template>
+        </ul>
+
+        <div class="slds-m-top_small">
+            <button class="slds-button slds-button_brand" onclick={reset}>
+                Reset Data
+            </button>
+        </div>
+    </div>
+</template>
