@@ -19,41 +19,28 @@ function disconnect() {
 }
 
 async function getDataFolders() {
-    return new Promise((resolve) => {
-        fs.readdir('./data').then((folders) => {
-            resolve(folders);
-        });
-    });
+    return fs.readdir('./data');
 }
 
 function dropTable(tableName) {
     console.log(`- Dropping table: ${tableName}`);
-    return new Promise(function (resolve) {
-        db.any(`DROP TABLE IF EXISTS ${tableName}`)
-            .then(() => {})
-            .catch((error) => {
-                console.log('ERROR:', error);
-            })
-            .finally(() => {
-                resolve();
-            });
-    });
+    return db
+        .any(`DROP TABLE IF EXISTS ${tableName}`)
+        .then(() => {})
+        .catch((error) => {
+            console.log('ERROR:', error);
+        });
 }
 
 const createTable = function (folder) {
     console.log(`- Creating table: ${folder}`);
-    return new Promise(function (resolve) {
-        fs.readFile(`./data/${folder}/create.sql`, 'utf-8').then((contents) => {
-            db.any(contents)
-                .then(() => {})
-                .catch((error) => {
-                    console.log('ERROR:', error);
-                })
-                .finally(() => {
-                    resolve();
-                });
+    return fs
+        .readFile(`./data/${folder}/create.sql`, 'utf-8')
+        .then((contents) => {
+            return db.any(contents).catch((error) => {
+                console.log('ERROR:', error);
+            });
         });
-    });
 };
 
 const insertRow = function (tableName, columns, values) {
