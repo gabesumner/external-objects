@@ -57,25 +57,21 @@ const createTable = function (folder) {
 };
 
 const insertRow = function (tableName, columns, values) {
-    return new Promise(function (resolve) {
-        db.any('INSERT INTO $1:name($2:name) VALUES ($3:list)', [
+    return db
+        .any('INSERT INTO $1:name($2:name) VALUES ($3:list)', [
             tableName,
             columns,
             values
         ])
-            .then(() => {
-                resolve();
-            })
-            .catch((error) => {
-                console.log('ERROR:', error);
-                throw error;
-            });
-    });
+        .catch((error) => {
+            console.log('ERROR:', error);
+            throw error;
+        });
 };
 
 const importData = function (folder) {
     console.log(`- Importing data: ${folder}`);
-    let data = [];
+    let promises = [];
     let columns = [];
     let count = 0;
     const reader = new CsvReader();
@@ -84,13 +80,12 @@ const importData = function (folder) {
         if (count === 1) {
             columns = row;
         } else {
-            insertRow(folder, columns, row);
+            promises.push(insertRow(folder, columns, row));
         }
     });
-    return new Promise(function (resolve) {
-        reader.read(`./data/${folder}/data.csv`, data).then(() => {
-            resolve();
-        });
+    return reader.read(`./data/${folder}/data.csv`).then(async () => {
+        await Promise.all(promises);
+        return true;
     });
 };
 
@@ -112,33 +107,22 @@ const resetDatabaseTables = async function () {
             }
         })
     );
-    return new Promise(function (resolve) {
-        Promise.all(promises)
-            .then(() => {
-                console.log('Database Table Reset Complete');
-                resolve(true);
-            })
-            .catch((error) => {
-                console.log('Error: ' + error);
-                resolve(false);
-            });
-    });
+    return Promise.all(promises);
 };
 
 const doesTableExist = function (table) {
-    return new Promise(function (resolve) {
-        db.any(
+    return db
+        .any(
             'SELECT EXISTS(SELECT FROM information_schema.tables WHERE table_schema = $1 AND table_name = $2)',
             ['public', table]
         )
-            .then((data) => {
-                resolve(data[0].exists);
-            })
-            .catch((error) => {
-                console.log('ERROR:', error);
-                throw error;
-            });
-    });
+        .then((data) => {
+            return data[0].exists;
+        })
+        .catch((error) => {
+            console.log('ERROR:', error);
+            throw error;
+        });
 };
 
 const DoDatabaseTablesExist = async function () {
@@ -176,7 +160,7 @@ const GetDatabaseTables = async function () {
 const ResetDatabaseTables = async function () {
     connect();
     const status = await resetDatabaseTables();
-    console.log('ResetDatabaseTables: ' + status);
+    console.log('Reset Database Tables Complete');
     disconnect();
     return status;
 };
