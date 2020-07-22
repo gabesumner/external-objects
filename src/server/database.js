@@ -5,6 +5,7 @@ const CsvReader = require('promised-csv');
 const process = require('process');
 let db;
 
+// Used to connect to the Heroku Postgres database
 function connect() {
     db = pgp({
         connectionString: process.env.DATABASE_URL,
@@ -14,24 +15,25 @@ function connect() {
     });
 }
 
+// Used to disconnect from the Heroku Postgres database.
 function disconnect() {
     db.$pool.end();
 }
 
-async function getDataFolders() {
+// Return a Promise that returns all folders in the "./data" directory.
+function getDataFolders() {
     return fs.readdir('./data');
 }
 
-function dropTable(tableName) {
-    console.log(`- Dropping table: ${tableName}`);
-    return db
-        .any(`DROP TABLE IF EXISTS ${tableName}`)
-        .then(() => {})
-        .catch((error) => {
-            console.log('ERROR:', error);
-        });
+// Return a Promise that drops a given database table.
+function dropTable(table) {
+    console.log(`- Dropping table: ${table}`);
+    return db.any(`DROP TABLE IF EXISTS ${table}`).catch((error) => {
+        console.log('ERROR:', error);
+    });
 }
 
+// Return a Promise reads the "create.sql" file from a given data folder then uses the contents to create a table
 const createTable = function (folder) {
     console.log(`- Creating table: ${folder}`);
     return fs
@@ -43,10 +45,11 @@ const createTable = function (folder) {
         });
 };
 
-const insertRow = function (tableName, columns, values) {
+// Return a Promise to insert a CSV parsed row for a given database table
+const insertRow = function (table, columns, values) {
     return db
         .any('INSERT INTO $1:name($2:name) VALUES ($3:list)', [
-            tableName,
+            table,
             columns,
             values
         ])
@@ -56,6 +59,7 @@ const insertRow = function (tableName, columns, values) {
         });
 };
 
+// Return a Promise to the data.csv file for a given folder, then import the data into a database table
 const importData = function (folder) {
     console.log(`- Importing data: ${folder}`);
     let promises = [];
