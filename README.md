@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project populates a Heroku Postgres database with demo data. You can then use Heroku Connect to share this data via a Heroku External Object to Salesforce using Salesforce Connect.
+This project populates a Heroku Postgres database with demo data. You can then use Heroku Connect to share this data via Heroku External Objects to Salesforce using Salesforce Connect.
 
 ## Quick Setup
 
@@ -45,12 +45,10 @@ $ heroku addons:create heroku-postgresql:hobby-dev
 $ heroku addons:create herokuconnect
 ```
 
--   Make note of the name assigned to your Heroku app. \*
-
 5. Setup an environment variable that points to your new Heroku Postgres database.
 
 ```sh
-export DATABASE_URL=$(heroku config:get DATABASE_URL -a your-heroku-app-name)
+$ export DATABASE_URL=$(heroku config:get DATABASE_URL -a your-heroku-app-name)
 ```
 
 5. Run your app.
