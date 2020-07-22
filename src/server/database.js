@@ -1,8 +1,6 @@
-'use strict';
 const pgp = require('pg-promise')();
 const fs = require('fs').promises;
 const CsvReader = require('promised-csv');
-const process = require('process');
 let db;
 
 // Used to connect to the Heroku Postgres database
@@ -80,6 +78,7 @@ const importData = function (folder) {
     });
 };
 
+// Return a Promise to cycle through each folder in ./data, delete the table, recreate it, then populate it with data.
 const resetDatabaseTables = async function () {
     let promises = [];
     console.log('Resetting Database Tables');
@@ -101,6 +100,7 @@ const resetDatabaseTables = async function () {
     return Promise.all(promises);
 };
 
+// Return a Promise to check whether a database table exists.
 const doesTableExist = function (table) {
     return db
         .any(
@@ -116,10 +116,12 @@ const doesTableExist = function (table) {
         });
 };
 
+// Checks see if ANY of the database tables already exist (true if any exist, false if none exist)
 const DoDatabaseTablesExist = async function () {
     let promises = [];
     let i;
     let statuses = [];
+
     connect();
     const tables = await getDataFolders();
     for (i = 0; i < tables.length; i++) {
@@ -142,12 +144,14 @@ const DoDatabaseTablesExist = async function () {
     return false;
 };
 
+// Gets a list of all the demo data sources (basically all the folders in ./data)
 const GetDatabaseTables = async function () {
     const folders = await getDataFolders();
     console.log(folders);
     return folders;
 };
 
+// Resets all the demo data (deletes the tables, then recreates and repopulates them)
 const ResetDatabaseTables = async function () {
     connect();
     const status = await resetDatabaseTables();
