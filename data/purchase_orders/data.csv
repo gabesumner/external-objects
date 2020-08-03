@@ -1,0 +1,101 @@
+id,supplier,supplierid,contact,phone,status,currency,netsum,tax,totalsum
+1000,Astro Electric,A-0000001,Alidia Dymick,503-515-8447,New,EUR,136836,4105,140941
+1001,Appy's Assembly,A-0000006,Cesya Cutforth,484-229-4678,New,CNY,457130,13714,470844
+1002,Meta Manufacturing,A-0000007,Kari Baskwell,634-636-5817,In Progress,PLN,67709,2031,69740
+1003,Meta Manufacturing,A-0000007,Emmett Reen,905-484-1885,Cancelled,CNY,75743,2272,78015
+1004,Appy's Assembly,A-0000006,Billy Wadelin,393-927-7650,Cancelled,BYR,265129,7954,273083
+1005,Codey Engineering,A-0000002,Grace Geratt,599-926-8392,New,CAD,283374,8501,291875
+1006,Max's Industries,A-0000004,Murvyn Braun,771-313-3580,New,HRK,332426,9973,342399
+1007,Meta Manufacturing,A-0000007,Bear Wittleton,944-246-2536,New,PHP,106317,3190,109507
+1008,Cloudy Supplies,A-0000003,Gideon Braisher,756-970-7197,New,EUR,325018,9751,334769
+1009,Max's Industries,A-0000004,Roanne Bartoszinski,175-815-6114,Delivery,CNY,461674,13850,475524
+1010,Max's Industries,A-0000004,Harriette Betteney,802-245-8298,Delivery,RUB,114822,3445,118267
+1011,Cloudy Supplies,A-0000003,Latisha La Grange,595-237-6735,In Progress,BRL,316891,9507,326398
+1012,Codey Engineering,A-0000002,Culver Havenhand,700-828-9098,Complete,PHP,337167,10115,347282
+1013,Astro Electric,A-0000001,Reamonn Reppaport,707-943-2820,Cancelled,NZD,485518,14566,500084
+1014,Meta Manufacturing,A-0000007,Ashlen Cammocke,369-143-6277,Cancelled,MRO,24840,745,25585
+1015,Max's Industries,A-0000004,Lucy Piffe,955-896-1971,New,IQD,243884,7317,251201
+1016,Appy's Assembly,A-0000006,Alasteir Joule,654-826-5095,Cancelled,RUB,83694,2511,86205
+1017,Appy's Assembly,A-0000006,Latrina Laurenzi,145-629-1716,In Progress,ARS,265194,7956,273150
+1018,Cloudy Supplies,A-0000003,Elsa Benedikt,772-724-8472,New,EUR,402561,12077,414638
+1019,Max's Industries,A-0000004,Cherri Pitchford,728-673-1764,Delivery,CNY,184743,5542,190285
+1020,Codey Engineering,A-0000002,Annamaria Guard,845-337-2918,Cancelled,PEN,271256,8138,279394
+1021,Einstein Labs,A-0000005,Ichabod Diggell,877-674-8472,In Progress,IDR,258342,7750,266092
+1022,Einstein Labs,A-0000005,Morris Fiorentino,645-672-9597,Complete,PYG,106635,3199,109834
+1023,Max's Industries,A-0000004,Margaret Mettricke,639-328-4104,Complete,PHP,60614,1818,62432
+1024,Einstein Labs,A-0000005,Steve Rose,535-634-0496,In Progress,PHP,338179,10145,348324
+1025,Cloudy Supplies,A-0000003,Scarlett Carlyle,591-893-9420,Complete,IDR,272191,8166,280357
+1026,Astro Electric,A-0000001,Skipton Di Bartolomeo,880-253-6083,Complete,PLN,379254,11378,390632
+1027,Cloudy Supplies,A-0000003,Rosa Gorhardt,459-410-4050,New,SEK,322106,9663,331769
+1028,Einstein Labs,A-0000005,Dyann Willingale,906-647-3621,Delivery,EUR,269516,8085,277601
+1029,Codey Engineering,A-0000002,Buddy Gorstidge,817-283-9363,New,RUB,150796,4524,155320
+1030,Astro Electric,A-0000001,Eunice De Haven,481-938-3509,New,EUR,104264,3128,107392
+1031,Appy's Assembly,A-0000006,Carver Zaple,276-164-8294,Cancelled,CNY,173754,5213,178967
+1032,Codey Engineering,A-0000002,Lynelle Shadrack,488-773-7793,Complete,YER,50648,1519,52167
+1033,Meta Manufacturing,A-0000007,Peadar Cunah,678-805-8693,Delivery,EUR,444644,13339,457983
+1034,Einstein Labs,A-0000005,Elisabetta Primmer,419-691-0959,In Progress,THB,184638,5539,190177
+1035,Astro Electric,A-0000001,Karen Billinge,668-959-7847,New,EUR,244077,7322,251399
+1036,Meta Manufacturing,A-0000007,Bridget Barme,597-409-4429,New,BRL,118707,3561,122268
+1037,Cloudy Supplies,A-0000003,Marylin Mowlam,302-911-3450,New,RUB,13651,410,14061
+1038,Cloudy Supplies,A-0000003,Elston Scouler,408-730-3495,Cancelled,BRL,392858,11786,404644
+1039,Appy's Assembly,A-0000006,Daryn McArdle,402-240-2711,Cancelled,RUB,366436,10993,377429
+1040,Codey Engineering,A-0000002,Bill Clutton,462-498-5322,Cancelled,EUR,431207,12936,444143
+1041,Codey Engineering,A-0000002,Charita Rambadt,539-444-9796,In Progress,BRL,59156,1775,60931
+1042,Appy's Assembly,A-0000006,Dewey Drysdell,482-857-9881,Complete,EUR,48741,1462,50203
+1043,Appy's Assembly,A-0000006,Durante Golde,965-581-3123,New,XAF,494734,14842,509576
+1044,Astro Electric,A-0000001,Arlena Stillman,167-291-9315,Complete,PHP,202337,6070,208407
+1045,Meta Manufacturing,A-0000007,Justine Goffe,278-432-8877,Cancelled,IDR,405550,12167,417717
+1046,Cloudy Supplies,A-0000003,Sheri Di Bartolomeo,730-947-2005,Delivery,PKR,134794,4044,138838
+1047,Codey Engineering,A-0000002,Bryon Harrower,186-438-0759,Complete,EUR,426312,12789,439101
+1048,Astro Electric,A-0000001,Garwood Krystek,641-842-4427,Cancelled,RUB,498362,14951,513313
+1049,Appy's Assembly,A-0000006,Meaghan Morhall,982-573-3719,Cancelled,CZK,159539,4786,164325
+1050,Meta Manufacturing,A-0000007,Gene Wickliffe,257-219-2345,Complete,EUR,385380,11561,396941
+1051,Einstein Labs,A-0000005,Humbert Bullingham,110-778-2709,New,IDR,86443,2593,89036
+1052,Appy's Assembly,A-0000006,Salvatore Rymill,965-997-0103,New,TOP,396245,11887,408132
+1053,Einstein Labs,A-0000005,Sidney Renzo,422-764-7083,Delivery,CNY,184204,5526,189730
+1054,Astro Electric,A-0000001,Jade Dadson,616-190-1460,New,USD,460282,13808,474090
+1055,Cloudy Supplies,A-0000003,Ianthe Kilmaster,849-479-4946,New,UGX,405043,12151,417194
+1056,Appy's Assembly,A-0000006,Jeniece Lawland,606-992-8933,Delivery,BRL,29643,889,30532
+1057,Meta Manufacturing,A-0000007,Caprice Wytchard,887-631-5217,Cancelled,THB,231474,6944,238418
+1058,Einstein Labs,A-0000005,Edgardo Nehlsen,804-580-1074,Complete,CNY,417959,12539,430498
+1059,Codey Engineering,A-0000002,Ruthanne Ginman,167-889-6616,In Progress,SEK,336458,10094,346552
+1060,Cloudy Supplies,A-0000003,Ray Davydenko,238-261-2718,In Progress,IDR,105890,3177,109067
+1061,Meta Manufacturing,A-0000007,Verge Briar,764-243-1826,New,EUR,101827,3055,104882
+1062,Astro Electric,A-0000001,Lucky Gammell,441-662-0028,In Progress,CNY,100473,3014,103487
+1063,Einstein Labs,A-0000005,Angele Syrie,382-916-3936,Delivery,CNY,463820,13915,477735
+1064,Max's Industries,A-0000004,Rosalinde Starling,819-917-0302,Cancelled,RUB,356738,10702,367440
+1065,Appy's Assembly,A-0000006,Martha Seatter,378-405-9916,Complete,RUB,54510,1635,56145
+1066,Meta Manufacturing,A-0000007,Claudell Meadley,935-131-6619,Complete,THB,245495,7365,252860
+1067,Astro Electric,A-0000001,Lia Demoge,909-682-0136,Delivery,PLN,164950,4949,169899
+1068,Cloudy Supplies,A-0000003,Birgitta Brophy,630-618-7482,Complete,RUB,489232,14677,503909
+1069,Meta Manufacturing,A-0000007,Rogers Dovington,378-240-8780,In Progress,EUR,317661,9530,327191
+1070,Codey Engineering,A-0000002,Valdemar Fallis,924-568-9364,New,CNY,303352,9101,312453
+1071,Einstein Labs,A-0000005,Vaclav Brice,554-681-1277,Cancelled,CNY,71533,2146,73679
+1072,Cloudy Supplies,A-0000003,Kassandra Stocking,120-371-3553,In Progress,AZN,383932,11518,395450
+1073,Appy's Assembly,A-0000006,Gaston Gerling,961-644-0182,Complete,SEK,299490,8985,308475
+1074,Cloudy Supplies,A-0000003,Garald Breyt,502-884-9035,New,USD,376877,11306,388183
+1075,Cloudy Supplies,A-0000003,Inessa Chesman,539-901-6095,Delivery,EUR,216625,6499,223124
+1076,Cloudy Supplies,A-0000003,Misti Petrusch,181-216-7325,New,SYP,449415,13482,462897
+1077,Codey Engineering,A-0000002,Inglebert O'Lynn,341-946-4670,Complete,BIF,403731,12112,415843
+1078,Appy's Assembly,A-0000006,Emeline Sell,229-646-9625,Delivery,IDR,40854,1226,42080
+1079,Max's Industries,A-0000004,Gerri Loughnan,558-827-7422,Delivery,MYR,130580,3917,134497
+1080,Astro Electric,A-0000001,Darda Gemlett,354-726-8777,Complete,NOK,288269,8648,296917
+1081,Codey Engineering,A-0000002,Sherlock Craine,307-665-3929,Delivery,CNY,239963,7199,247162
+1082,Max's Industries,A-0000004,Reine Sapp,504-508-4315,Delivery,HTG,44292,1329,45621
+1083,Meta Manufacturing,A-0000007,Winthrop Rodson,970-607-1976,Delivery,IDR,96063,2882,98945
+1084,Einstein Labs,A-0000005,Corby Ledgeway,782-615-7393,New,LBP,433667,13010,446677
+1085,Einstein Labs,A-0000005,Hunt Lynskey,820-930-2810,In Progress,RUB,440054,13202,453256
+1086,Meta Manufacturing,A-0000007,Anderson Cardenosa,573-693-8499,In Progress,EUR,274914,8247,283161
+1087,Einstein Labs,A-0000005,Erminia Doyley,399-803-5447,Cancelled,BRL,51493,1545,53038
+1088,Max's Industries,A-0000004,Charlene Bellhouse,500-928-2541,Complete,PLN,460318,13810,474128
+1089,Codey Engineering,A-0000002,Peder Lars,969-347-3266,In Progress,JPY,310222,9307,319529
+1090,Codey Engineering,A-0000002,Fanechka Bleeze,990-373-1391,New,IDR,124765,3743,128508
+1091,Cloudy Supplies,A-0000003,Clerkclaude Ambrogio,208-364-9312,Cancelled,PHP,203217,6097,209314
+1092,Cloudy Supplies,A-0000003,Armin Strong,977-776-7651,Cancelled,PHP,33100,993,34093
+1093,Cloudy Supplies,A-0000003,Rebecca Bowman,512-951-3104,Complete,CNY,311543,9346,320889
+1094,Einstein Labs,A-0000005,Herrick Rosendahl,490-117-0280,New,CNY,33789,1014,34803
+1095,Cloudy Supplies,A-0000003,Sibella Tiplady,997-869-0410,Delivery,JPY,158821,4765,163586
+1096,Astro Electric,A-0000001,Pammi Shirtliff,712-216-4285,Complete,RUB,10361,311,10672
+1097,Meta Manufacturing,A-0000007,Yolande McCome,154-350-4496,Complete,PHP,388082,11642,399724
+1098,Max's Industries,A-0000004,Andreana Navarijo,228-822-9034,Delivery,PHP,405207,12156,417363
+1099,Meta Manufacturing,A-0000007,Sheilah Conrad,315-910-3048,Delivery,EUR,170560,5117,175677

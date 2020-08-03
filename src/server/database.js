@@ -1,6 +1,6 @@
 const pgp = require('pg-promise')();
 const fs = require('fs').promises;
-const CsvReader = require('promised-csv');
+const parse = require('csv-parse/lib/sync');
 let db;
 
 // Used to connect to the Heroku Postgres database
@@ -20,7 +20,11 @@ function disconnect() {
 
 // Return a Promise that returns all folders in the "./data" directory.
 function getDataFolders() {
-    return fs.readdir('./data');
+    return new Promise(function (resolve) {
+        fs.readdir('./data').then(function (folders) {
+            resolve(folders.filter((item) => !/(^|\/)\.[^/.]/g.test(item)));
+        });
+    });
 }
 
 // Return a Promise that drops a given database table.
@@ -58,24 +62,23 @@ const insertRow = function (table, columns, values) {
 };
 
 // Return a Promise to the data.csv file for a given folder, then import the data into a database table
-const importData = function (folder) {
+const importData = async function (folder) {
     console.log(`- Importing data: ${folder}`);
     let promises = [];
     let columns = [];
-    let count = 0;
-    const reader = new CsvReader();
-    reader.on('row', (row) => {
-        count++;
-        if (count === 1) {
-            columns = row;
+
+    const content = await fs.readFile(`./data/${folder}/data.csv`);
+    const records = parse(content);
+
+    for (let i = 0; i < records.length; i++) {
+        if (i === 0) {
+            columns = records[i];
         } else {
-            promises.push(insertRow(folder, columns, row));
+            promises.push(insertRow(folder, columns, records[i]));
         }
-    });
-    return reader.read(`./data/${folder}/data.csv`).then(async () => {
-        await Promise.all(promises);
-        return true;
-    });
+    }
+
+    return Promise.all(promises);
 };
 
 // Return a Promise to cycle through each folder in ./data, delete the table, recreate it, then populate it with data.
@@ -83,7 +86,7 @@ const resetDatabaseTables = async function () {
     let promises = [];
     console.log('Resetting Database Tables');
     promises.push(
-        await fs.readdir('data').then((folders) => {
+        await getDataFolders().then((folders) => {
             for (let folder of folders) {
                 promises.push(
                     dropTable(folder)
